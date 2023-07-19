@@ -13,8 +13,9 @@ const router = new VueRouter({
   routes: [
     { path: '/', name: 'home', component: Home },
     { path: '/foo', name: 'foo', component: Foo },
-    { path: '/bar/:id', name: 'bar', component: Bar }
-  ]
+    { path: '/bar/:id', name: 'bar', component: Bar },
+    { path: '/grade/:grade_id/class/:class_id', name: 'class', component: Class }
+  
 })
 
 new Vue({
@@ -27,6 +28,7 @@ new Vue({
         <li><router-link :to="{ name: 'home' }">home</router-link></li>
         <li><router-link :to="{ name: 'foo' }">foo</router-link></li>
         <li><router-link :to="{ name: 'bar', params: { id: 123 }}">bar</router-link></li>
+        <li><router-link :to="{ name: 'class', params: { grade_id:9, class_id: 3 }}">class</router-link></li>
       </ul>
       <router-view class="view"></router-view>
     </div>
